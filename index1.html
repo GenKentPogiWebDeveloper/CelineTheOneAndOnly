@@ -67,8 +67,12 @@
         player.style.display = 'block';
         pauseBtn.style.display = 'inline-block';
         resumeBtn.style.display = 'none';
-        // optional: remember user choice so next visit you can attempt autoplay (see notes)
+        // remember user choice
         localStorage.setItem('music-permission', 'granted');
+
+        // Navigate to index.html after starting playback
+        // Change this to an absolute URL if needed, or use window.open(...) to open in a new tab.
+        window.location.href = 'index.html';
       } catch (err) {
         // Playback failed (rare when called from a user gesture)
         console.error('Playback failed:', err);
